@@ -1,0 +1,39 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: .8rem 10vw;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 0 .4rem rgba(0,0,0,.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+    background: #fff;
+
+    &__nav{
+        display: flex;
+    }
+
+    &__nav ul{
+        display: flex;
+        list-style: none;
+    }
+
+    &__nav-item{
+        margin: 0 .5rem;
+        cursor: pointer;
+        display: block;
+    }
+
+    &__nav-item a{
+        cursor: pointer;
+        font-size: 1.4rem;
+        height: 100%;
+        display: block;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        padding: 0 .5rem;
+    }
+}
