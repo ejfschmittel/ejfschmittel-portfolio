@@ -46,4 +46,11 @@ html, body, .App, #root{
         align-items: center;
         height: 100vh;
     }
+
+    &__projects{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
 }

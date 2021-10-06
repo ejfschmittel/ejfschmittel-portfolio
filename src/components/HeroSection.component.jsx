@@ -5,7 +5,7 @@ import "../styles/components/heroSection.styles.scss";
 const HeroSection = () => (
     <div className="section section__hero">
         <SpaceBackground />
-        <div className="hero-section">
+        <div className="hero-section animation animation--fadeInTop">
             <h3 className="hero-section__title">Elias Schmittel</h3>
             <h5 className="hero-section__subtitle">Webdeveloper</h5>
             <p></p>
