@@ -4,6 +4,12 @@ import "../styles/components/header.styles.scss";
 import "../styles/components/logo.styles.scss";
 
 const Header = () => {
+
+
+    const onProjectsClick = () => smoothScrollTo("section-projects")
+    const onContactClick = () => smoothScrollTo("section-contact")
+    const onHomeClick = () => smoothScrollTo("section-hero")
+
     return (
         <header className="header">
             <div>
@@ -12,9 +18,9 @@ const Header = () => {
 
             <nav className="header__nav">
                 <ul>
-                    <li className="header__nav-item"><a>Projects</a></li>
-                    <li className="header__nav-item"><a>Contact Me</a></li>
-                    <li className="header__nav-item"><a></a></li>
+                    <li className="header__nav-item"><a onClick={onHomeClick}>Home</a></li>
+                    <li className="header__nav-item"><a onClick={onProjectsClick}>Projects</a></li>
+                    <li className="header__nav-item"><a onClick={onContactClick}>Contact Me</a></li>
                 </ul>
             </nav>
         </header>
