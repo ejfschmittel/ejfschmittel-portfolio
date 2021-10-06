@@ -1,0 +1,22 @@
+.footer{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+    width: 80%;
+
+    &__copyright{
+        font-size: 1.2rem;
+    }
+
+    &__socials{
+        display: flex;
+
+        svg{
+            width: 2rem;
+            height: 2rem;
+            margin-left: 1rem;
+            cursor: pointer;
+        }
+    }
+}

@@ -1,22 +1,25 @@
 import React from 'react'
+import {smoothScrollTo} from "../utils/utils"
 import "../styles/components/header.styles.scss";
 import "../styles/components/logo.styles.scss";
 
-const Header = () => (
-    <header className="header">
-        <div>
-            <Logo />
-        </div>
+const Header = () => {
+    return (
+        <header className="header">
+            <div>
+                <Logo />
+            </div>
 
-        <nav className="header__nav">
-            <ul>
-                <li className="header__nav-item"><a>Projects</a></li>
-                <li className="header__nav-item"><a>Contact Me</a></li>
-                <li className="header__nav-item"><a></a></li>
-            </ul>
-        </nav>
-    </header>
-)
+            <nav className="header__nav">
+                <ul>
+                    <li className="header__nav-item"><a>Projects</a></li>
+                    <li className="header__nav-item"><a>Contact Me</a></li>
+                    <li className="header__nav-item"><a></a></li>
+                </ul>
+            </nav>
+        </header>
+    )
+}
 
 
 const Logo = () => (

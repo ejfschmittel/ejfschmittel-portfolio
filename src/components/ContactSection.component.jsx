@@ -3,7 +3,7 @@ import "../styles/components/contactSection.styles.scss"
 import {FaEnvelopeOpenText} from "react-icons/fa"
 
 const ContactSection = () => (
-    <div className="section section__contact">
+    <div className="section section__contact" id="section-contact">
         <div className="contact-section-layout">
             <div className="contact-form">
 
