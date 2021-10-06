@@ -1,3 +1,5 @@
+@use "../abstracts/index.scss" as *;
+
 .header{
     display: flex;
     justify-content: space-between;
@@ -10,15 +12,36 @@
     width: 100%;
     z-index: 20;
     background: #fff;
+    align-items: center;
 
     &__nav{
         display: flex;
+        position: relative;
     }
 
-    &__nav ul{
-        display: flex;
-        list-style: none;
+    &__nav--open &__btn-bar--1{
+        transform: translate(-50%, -50%) rotate(45deg);
     }
+
+
+    &__nav--open &__btn-bar--2{
+        opacity: 0;
+    }
+
+    &__nav--open &__btn-bar--3{
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+
+
+   
+    
+    &__nav--open &__nav-links{
+        @include respond(tab-port){        
+            clip-path: circle(2000px at 90% -5%);
+        }
+    }
+    
 
     &__nav-item{
         margin: 0 .5rem;
@@ -35,5 +58,89 @@
         display: flex;
         align-items: center;
         padding: 0 .5rem;
+    }
+
+    &__menu-btn{
+        background: #fff;
+        border: none;
+        cursor: pointer;
+        z-index: 50;
+        width: 5rem;
+        height: 5rem;
+        position: relative;
+        display: none;
+
+      
+        padding: 1.4rem;
+        border-radius: 50%;
+
+        &:hover{
+            background: #eee;
+        }
+
+        @include respond(tab-port){        
+            display: block;
+        }
+    }
+
+    &__btn-bars{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+    }
+
+    &__nav-links{
+     
+        display: flex;
+        list-style: none;
+        z-index: 20;
+        background: #fff;
+        
+        @include respond(tab-port){   
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: clip-path .5s ease-out;     
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            clip-path: circle(50px at 90% -5%);
+        }
+        
+    }
+
+
+
+
+
+    &__btn-bar{
+        width: 3rem;
+        height: 4px;
+        border-radius: 2px;
+        background: #333;
+        display: flex;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transition: all .3s;
+        
+      
+        transform-origin: center center;
+
+        &--1{
+            transform: translate(-50%, calc(-50% - 8px));
+        }
+
+        &--2{
+            transform: translate(-50%, -50%);
+        }
+
+        &--3{
+            transform: translate(-50%, calc(-50% + 8px));
+        }
     }
 }
