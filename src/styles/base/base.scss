@@ -52,5 +52,20 @@ html, body, .App, #root{
         justify-content: center;
         align-items: center;
         min-height: 100vh;
+        background: #eee;
+    }
+
+    &__contact{
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgb(29,22,147);
+        background: linear-gradient(45deg, rgba(29,22,147,1) 0%, rgba(68,101,204,1) 46%, rgba(68,101,204,1) 46%, rgba(68,101,204,1) 48%, rgba(148,173,231,1) 100%);
+    }
+
+
+    &__footer{
+
     }
 }

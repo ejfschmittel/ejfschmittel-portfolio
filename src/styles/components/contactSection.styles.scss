@@ -1,0 +1,72 @@
+.contact-form{
+   
+    width: min(80vw, 50rem);
+
+    &__title{
+        font-size: 4rem;
+        text-align: center;
+        color: #fff;
+        font-weight: bold;
+        margin-bottom: 1rem;
+     
+    }
+
+    &__my-email{
+        text-align: center;
+        color: #fff;
+        font-size: 1.4rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid #eee;
+    }
+
+    &__form{
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        width: min(100%, 40rem);
+        margin: 0 auto;
+    }
+
+    &__field{
+        width: 100%;
+        margin-bottom: 1.6rem;
+    }
+
+    &__label{
+        color: #fff;
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin-bottom: .3rem;
+    }
+
+    &__email{
+        width: 100%;
+        display: block;
+        border-radius: .3rem;
+        padding: .3rem .5rem;
+        font-size: 1.6rem;
+        border: none;
+        
+    }
+
+    &__message{
+        width: 100%;
+        height: 10rem;
+        font-size: 1.6rem;
+        display: block;
+        border-radius: .3rem;
+        resize: none;
+        padding: .5rem;
+    }
+
+    &__send-btn{
+        margin-top: 1rem;
+        padding: .5rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+        background: #efefef;
+        border: none;
+        border-radius: .3rem;
+        box-shadow: 0 .2rem .5rem rgba(0,0,0,.5);
+    }
+}
