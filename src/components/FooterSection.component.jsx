@@ -10,8 +10,8 @@ const FooterSection = () => (
                 Copyright © 2021 Elias Schmittel
             </div>
             <div className="footer__socials">
-                <a><FaGithub /></a>
-                <a><FaLinkedin /></a>
+                <a href="https://github.com/ejfschmittel/"><FaGithub /></a>
+                <a href="https://www.linkedin.com/in/elias-schmittel-0759b3109/"><FaLinkedin /></a>
             </div>
         </div>
     </footer>
