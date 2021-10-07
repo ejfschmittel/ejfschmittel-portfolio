@@ -3,7 +3,7 @@ import "../styles/components/contactSection.styles.scss"
 import {FaEnvelopeOpenText} from "react-icons/fa"
 
 const ContactSection = () => {
-
+    const [errorMessage,setErrorMessage] = useState(null)
     const [formData, setFormData] = useState({
         email: "",
         message: ""
@@ -21,6 +21,21 @@ const ContactSection = () => {
         e.preventDefault();
         //send to google forms
 
+        setErrorMessage(null)
+
+        if(!formData.email){
+            setErrorMessage("Email can't be empty.")
+            return;
+        }
+
+
+        if(!formData.message){
+            setErrorMessage("Message can't be empty.")
+            return;
+        }
+
+        
+
         const requestData = new FormData();
         requestData.append("entry.1087599000", formData.email)
         requestData.append("entry.1951716230", formData.message)
@@ -34,8 +49,14 @@ const ContactSection = () => {
             body: requestData
         }).then((res) => {
             console.log(res)
+            setErrorMessage("Message successfully sent.")
+            setFormData({
+                email: "",
+                message: ""
+            })
         }).catch(error => {
             console.log(error)
+            setErrorMessage("Something went wrong. Reload the page and try again.")
         })
     }
 
@@ -49,6 +70,7 @@ const ContactSection = () => {
                     <div className="contact-form__my-email"><FaEnvelopeOpenText /> ejfschmittel@gmail.com</div>
                 </div>
                 <form className="contact-form__form" onSubmit={onSubmit}>
+                   
                     <div className="contact-form__field">
                         <label className="contact-form__label">Email</label>
                         <input className="contact-form__email" type="email" value={formData.email} name="email" onChange={onChange}/>
@@ -56,6 +78,9 @@ const ContactSection = () => {
                     <div className="contact-form__field">
                         <label className="contact-form__label">Message</label>
                         <textarea className="contact-form__message" name="message" value={formData.message} name="message" onChange={onChange}/>
+                    </div>
+                    <div className="contact-form__error">
+                        {errorMessage}
                     </div>
                     <button className="contact-form__send-btn">Send</button>           
                 </form>

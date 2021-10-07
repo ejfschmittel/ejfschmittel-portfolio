@@ -69,4 +69,13 @@
         border-radius: .3rem;
         box-shadow: 0 .2rem .5rem rgba(0,0,0,.5);
     }
+
+    &__error{
+        height: 1.6rem;
+        text-align: center;
+        color: #fff;
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+        margin-top: -.8rem;
+    }
 }
