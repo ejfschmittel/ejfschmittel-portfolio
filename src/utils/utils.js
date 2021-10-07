@@ -10,3 +10,4 @@ export const smoothScrollTo = (id) => {
         top: element.getBoundingClientRect().top +  window.scrollY
     })
 }
+

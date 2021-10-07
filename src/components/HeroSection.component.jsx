@@ -8,7 +8,7 @@ const HeroSection = () => {
     const onProjectsClick = () => smoothScrollTo("section-projects")
 
     return (
-        <div className="section section__hero">
+        <div className="section section__hero" id="section-hero">
             <SpaceBackground />
             <div className="hero-section animation animation--fadeInTop">
                 <h1 className="hero-section__title">Elias Schmittel</h1>
