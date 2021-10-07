@@ -13,7 +13,7 @@
         "tech": "HTML,Ruby,PHP",
         "github-link": "",
         "web-link": "https://cryptool.org/",
-        "image": "/project_images/cryptobooks.org.png"
+        "image": "/project_images/cryptool.png"
     },
     {
         "title": "AES-Rijndael Animation",
@@ -21,7 +21,7 @@
         "tech": "WebGL,JavaScript",
         "github-link": "https://github.com/ejfschmittel/rijndael-animation-pixijs",
         "web-link": "https://ejfschmittel.github.io/rijndael-animation-pixijs/",
-        "image": "/project_images/cryptobooks.org.png"
+        "image": "/project_images/rijndael-animation.png"
     },
     {
         "title": "Meme maker",
@@ -29,7 +29,7 @@
         "tech": "React,WebGL",
         "github-link": "https://github.com/ejfschmittel/mememaker",
         "web-link": "https://ejfschmittel.github.io/mememaker/",
-        "image": "/project_images/cryptobooks.org.png"
+        "image": "/project_images/mememaker.png"
     },
     {
         "title": "Song year quiz",
@@ -37,7 +37,7 @@
         "tech": "React",
         "github-link": "https://github.com/ejfschmittel/guess-song-year",
         "web-link": "https://song-guessr.herokuapp.com/",
-        "image": "/project_images/cryptobooks.org.png"
+        "image": "/project_images/song-guessr.png"
     }
    
 ]
