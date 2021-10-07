@@ -3,40 +3,40 @@
         "title": "Cryptobooks.org",
         "subtitle": "Created Adminstrative backend for non-profit project Cryptobooks.org",
         "tech": "React,PHP",
-        "github-link": "",
-        "web-link": "https://cryptobooks.org/",
+        "githubLink": "",
+        "webLink": "https://cryptobooks.org/",
         "image": "/project_images/cryptobooks.org.png"
     },
     {
         "title": "Cryptool.org",
         "subtitle": "Helped redesigning and migrating Open Source project to new Website.",
         "tech": "HTML,Ruby,PHP",
-        "github-link": "",
-        "web-link": "https://cryptool.org/",
+        "githubLink": "",
+        "webLink": "https://cryptool.org/",
         "image": "/project_images/cryptool.png"
     },
     {
         "title": "AES-Rijndael Animation",
         "subtitle": "Animation explaining the inner workings of the AES-Rijndael encryption process.",
         "tech": "WebGL,JavaScript",
-        "github-link": "https://github.com/ejfschmittel/rijndael-animation-pixijs",
-        "web-link": "https://ejfschmittel.github.io/rijndael-animation-pixijs/",
+        "githubLink": "https://github.com/ejfschmittel/rijndael-animation-pixijs",
+        "webLink": "https://ejfschmittel.github.io/rijndael-animation-pixijs/",
         "image": "/project_images/rijndael-animation.png"
     },
     {
         "title": "Meme maker",
         "subtitle": "Quickly make memes with this memaker with handy face extraction feature.",
         "tech": "React,WebGL",
-        "github-link": "https://github.com/ejfschmittel/mememaker",
-        "web-link": "https://ejfschmittel.github.io/mememaker/",
+        "githubLink": "https://github.com/ejfschmittel/mememaker",
+        "webLink": "https://ejfschmittel.github.io/mememaker/",
         "image": "/project_images/mememaker.png"
     },
     {
         "title": "Song year quiz",
         "subtitle": "Quiz yourself on which year a song was released. Powered by the spotify API.",
         "tech": "React",
-        "github-link": "https://github.com/ejfschmittel/guess-song-year",
-        "web-link": "https://song-guessr.herokuapp.com/",
+        "githubLink": "https://github.com/ejfschmittel/guess-song-year",
+        "webLink": "https://song-guessr.herokuapp.com/",
         "image": "/project_images/song-guessr.png"
     }
    

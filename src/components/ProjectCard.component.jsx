@@ -15,30 +15,35 @@ const ProjectCard = ({project}) => {
 
     return (
         <div className="project-card">
-            <div className="project-card__img-container">
-                <img src={project.image} className="project-card__img" />
+            <h3 className="project-card__title">{project.title}</h3>
+            <div className="project-card__img-container" style={{backgroundImage: `url('${project.image}')`}}>
+               
             </div>
             <div className="project-card__tech">
                 {tech.map(techString => (
-                    <div className="project-card__tech-bubble" style={{backgroundColor: getTechColor(techString)}}>{techString}</div>
+                    <div className="project-card__tech-bubble" >{techString}</div>
                 ))}
             </div>
 
             <div className="project-card__info">
 
-                <h3 className="project-card__title">{project.title}</h3>
                 <p className="project-card__description">{project.subtitle}</p>
 
 
                 <div className="project-card__actions">
-                    <button className="project-card__btn project-card__btn-github">
+
+                    {project.githubLink &&
+                    <a className="project-card__btn project-card__btn-github" href={project.githubLink}>
                         <FaGithub />
                         View Code
-                    </button>
-                    <button className="project-card__btn project-card__btn-website">
+                    </a>
+                    }
+                    {project.webLink &&
+                    <a className="project-card__btn project-card__btn-website" href={project.webLink}>
                         <FaGlobe />
                         View Demo
-                    </button>
+                    </a>
+                    }
                 </div>
             </div>
         </div>
