@@ -2,42 +2,46 @@ import * as PIXI from "pixi.js"
 
 
 let warpSpeed = .3;
-let baseSpeed = .01
-
 
 export const speedUp = () => {
     warpSpeed = 1;
-    baseSpeed = .01;
 }
 
 export const slowDown = () => {
     warpSpeed = .3;
-    baseSpeed = .01;
 }
 
 
 export const initStarBackground = (canvas) => {
 
 const app = new PIXI.Application({
-    width: 800,
-    height: 600,
-    view: canvas
+    view: canvas,
+    resizeTo: document.getElementById("section-hero")
 });
+
+
 
 
 // Get the texture for rope.
 const starTexture = PIXI.Texture.from('./star.png');
 
 
-console.log(starTexture)
+console.log(app.renderer.width)
+
+app.stage.hitArea = new PIXI.Rectangle(0, 0, app.renderer.width, app.renderer.height);
+
 
 const starAmount = 200;
+const asteroidAmount = 20;
 let cameraZ = 0;
 const fov = 10;
 const baseSpeed = 0.01;
 let speed = 0;
 const starStretch = 10;
 const starBaseSize = 0.05;
+
+const asteroidBaseSize = .5;
+const asteroidStrech = 0;
 
 function getRandomColor() {
     var letters = '0123456789ABCDEF';
@@ -65,6 +69,29 @@ for (let i = 0; i < starAmount; i++) {
     randomizeStar(star, true);
     app.stage.addChild(star.sprite);
     stars.push(star);
+}
+
+app.stage.interactive = true;
+// create asteroids
+const astroids = [];
+for (let i = 0; i < asteroidAmount; i++) {
+    const astroid = {
+        sprite: new PIXI.Sprite(starTexture),
+        z: 0,
+        x: 0,
+        y: 0,
+    };
+
+    astroid.sprite.anchor.x = 0.5;
+    astroid.sprite.anchor.y = 0.7;
+    astroid.sprite.tint = 0xff0000;
+    randomizeStar(astroid, true);
+    app.stage.addChild(astroid.sprite);
+    astroids.push(astroid);
+    
+    astroid.sprite.on("click", () => {
+        console.log("asteroid click")
+    })
 }
 
 
@@ -107,6 +134,29 @@ app.ticker.add((delta) => {
         star.sprite.scale.y = distanceScale * starBaseSize + distanceScale * speed * starStretch * distanceCenter / app.renderer.screen.width;
         star.sprite.rotation = Math.atan2(dyCenter, dxCenter) + Math.PI / 2;
     }
+
+    // update asteroids
+    for (let i = 0; i < asteroidAmount; i++) {
+        const astroid = astroids[i];
+        if (astroid.z < cameraZ) randomizeStar(astroid);
+
+        // Map star 3d position to 2d with really simple projection
+        const z = astroid.z - cameraZ;
+        astroid.sprite.x = astroid.x * (fov / z) * app.renderer.screen.width + app.renderer.screen.width / 2;
+        astroid.sprite.y = astroid.y * (fov / z) * app.renderer.screen.width + app.renderer.screen.height / 2;
+
+        // Calculate star scale & rotation.
+        const dxCenter = astroid.sprite.x - app.renderer.screen.width / 2;
+        const dyCenter = astroid.sprite.y - app.renderer.screen.height / 2;
+        const distanceCenter = Math.sqrt(dxCenter * dxCenter + dyCenter * dyCenter);
+        const distanceScale = Math.max(0, (2000 - z) / 2000);
+        astroid.sprite.scale.x = distanceScale * asteroidBaseSize;
+        // Star is looking towards center so that y axis is towards center.
+        // Scale the star depending on how fast we are moving, what the stretchfactor is and depending on how far away it is from the center.
+        astroid.sprite.scale.y = distanceScale * asteroidBaseSize + distanceScale * speed * asteroidStrech * distanceCenter / app.renderer.screen.width;
+        astroid.sprite.rotation = Math.atan2(dyCenter, dxCenter) + Math.PI / 2;
+    }
+
 });
 
 }
