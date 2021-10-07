@@ -1,5 +1,21 @@
 import * as PIXI from "pixi.js"
 
+
+let warpSpeed = .3;
+let baseSpeed = .01
+
+
+export const speedUp = () => {
+    warpSpeed = 1;
+    baseSpeed = .01;
+}
+
+export const slowDown = () => {
+    warpSpeed = .3;
+    baseSpeed = .01;
+}
+
+
 export const initStarBackground = (canvas) => {
 
 const app = new PIXI.Application({
@@ -9,20 +25,17 @@ const app = new PIXI.Application({
 });
 
 
-console.log(canvas)
-
 // Get the texture for rope.
 const starTexture = PIXI.Texture.from('./star.png');
 
 
 console.log(starTexture)
 
-const starAmount = 100;
+const starAmount = 200;
 let cameraZ = 0;
 const fov = 10;
 const baseSpeed = 0.01;
 let speed = 0;
-let warpSpeed = .3;
 const starStretch = 10;
 const starBaseSize = 0.05;
 
@@ -45,7 +58,7 @@ for (let i = 0; i < starAmount; i++) {
         x: 0,
         y: 0,
     };
-    console.log(star)
+
     star.sprite.anchor.x = 0.5;
     star.sprite.anchor.y = 0.7;
     star.sprite.tint = getRandomColor();
