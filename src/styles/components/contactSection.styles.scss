@@ -68,6 +68,20 @@
         border: none;
         border-radius: .3rem;
         box-shadow: 0 .2rem .5rem rgba(0,0,0,.5);
+        transition: .3s;
+
+        &:hover{
+            background: rgb(133, 46, 133);
+            color: #fff;
+            fill: #fff;
+        }
+
+        &:active{
+            box-shadow: 0 .1rem .2rem rgba(0,0,0,.5);
+            background: rgb(133, 46, 133);
+            color: #fff;
+            fill: #fff;
+        }
     }
 
     &__error{
