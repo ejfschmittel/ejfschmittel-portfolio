@@ -32,6 +32,14 @@
         "image": "/project_images/mememaker.png"
     },
     {
+        "title": "Guess the Person",
+        "subtitle": "Create custom \"Guess who?\" boards.",
+        "tech": "React,NestJS",
+        "githubLink": "https://github.com/ejfschmittel/guesstheperson",
+        "webLink": "https://guesstheperson.eliasschmittel.com/",
+        "image": "/project_images/guesstherperson.png"
+    },
+    {
         "title": "Song year quiz",
         "subtitle": "Quiz yourself on which year a song was released. Powered by the spotify API.",
         "tech": "React",
@@ -40,4 +48,5 @@
         "image": "/project_images/song-guessr.png"
     }
    
+    
 ]
